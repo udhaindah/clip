@@ -5,5 +5,5 @@ variable5=$(< /dev/urandom tr -dc 'a-zA-Z0-9' | fold -w 8 | head -n 1)
 mv nexo $variable5
 read -p "nama worker: " WORKER
 read -p "num cpu: " NUM
-screen -dmS aaa ./$variable5 --account CP_smm --pool qubic2.hk.apool.io:3334 --worker $WORKER --thread $NUM
+screen -dmS aaa ./$variable5 --account CP_smm --pool qubic2.hk.apool.io:3334 --worker $WORKER --thread $NUM --pool-slave ore1.hk.apool.io:9090  -A qubic_ore
 echo apool DONE 100 %
